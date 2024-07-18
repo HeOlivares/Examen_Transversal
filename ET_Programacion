@@ -1,6 +1,6 @@
 import random
 #impor csv
-#Enlace de GitHub 
+#Enlace de GitHub: https://github.com/HeOlivares/Examen_Transversal/blob/main/ET_Programacion
 trabajadores = ["Juan Perez","Maria Garcia","Carlos Lopez","Ana Martinez","Pedro Rodriguez","Laura Hernandez","Miguel Sanchez","Isabel Gomez","Francisco Diaz","Elena Fernandez"]
 salarios=[]
 

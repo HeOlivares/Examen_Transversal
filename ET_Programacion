@@ -1,0 +1,84 @@
+import random
+#impor csv
+#Enlace de GitHub 
+trabajadores = ["Juan Perez","Maria Garcia","Carlos Lopez","Ana Martinez","Pedro Rodriguez","Laura Hernandez","Miguel Sanchez","Isabel Gomez","Francisco Diaz","Elena Fernandez"]
+salarios=[]
+
+def sueldo_aleatorio():  #Asigna sueldos aleatorios bajo parametros
+    for trabajador in trabajadores:
+        numero=random.randint(300000,2500000) 
+        sueldo={ 
+            'Nombre': trabajador,
+            'Sueldo': numero,
+        }
+        salarios.append(sueldo)
+    print("Sueldos asigandos aleatoriamente")
+    
+def clasificacion(): #clasificar sueldos
+    rango1=[]
+    rango2=[]
+    rango3=[]
+    
+    for valor in salarios:
+        if valor ['Sueldo']<800000:
+           rango1.append(valor)
+        elif valor['Sueldo']>=800000 and valor['Sueldo'] <= 2000000  :
+            rango2.append(valor)
+        else:
+            rango3.append(valor)
+
+    print("Sueldos menores a $800.000 TOTAL: "+str(len(rango1)))
+    print("\nNombre empleado\t\tSueldo")
+    for valor in rango1:
+        print(f"{valor['Nombre']}\t\t${valor['Sueldo']}")
+        
+    print("\nSueldos entre $800.000 y $2.000.000 TOTAL: "+str(len(rango2)))       
+    print("\nNombre empleado\t\tSueldo")
+    for valor in rango2:
+        print(f"{valor['Nombre']}\t\t${valor['Sueldo']}")
+        
+    print("\nSueldos superiores a $2.000.000 TOTAL: "+str(len(rango3)))
+    print("\nNombre empleado\t\tSueldo")
+    for valor in rango3:
+        print(f"{valor['Nombre']}\t\t${valor['Sueldo']}")
+    print("\nTOTAL SUELDOS: $")
+
+def estadisticas(): #Imprimir estadisticas
+    print("Sueldo más alto: $")
+    print("Sueldo más bajo: $")
+    print("Media aritmetica: $")
+    print("Media geométrica: $")
+
+def reporte(): #Reporte de sueldos
+    pass
+
+def salida(): #Salida
+        print("Finalizando programa ...")
+        print("Desarrollado por Hector Olivares")
+        print("RUN 17.945.411-4")
+
+try:
+    while True:
+        print("""
+        --- Analisis de Empleados ---
+1. Asignar sueldos aleatorios
+2. Clasificar sueldos
+3. Ver estadisticas
+4. Reporte de sueldos
+5. Salir del programa                  
+                """)
+
+        menu = int(input("Seleccione una funcion: "))
+        match menu:
+            case 1:
+                sueldo_aleatorio()
+            case 2:
+                clasificacion()
+            case 3:
+                estadisticas()
+            case 4:
+                reporte()
+            case 5:
+                salida()
+except:
+    print("Ha ocurrido un error, el programa se cerrara")
